@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static "deps/css/header-light.css"%}" />
+<link rel="stylesheet" href="{% static "deps/css/account.css"%}" />
+{% endblock css %}
+
+{% block content %}
+<main>
+	<!-- <div class="header__background"></div> -->
+	<section class="profile">
+		<div class="profile__container">
+			<img
+				src="{% static "deps/img/slider-photo2.jpg"%}"
+				alt="User Avatar"
+				class="profile__avatar"
+			/>
+			<div class="profile__info">
+				<h3 class="profile__name">John Doe</h3>
+				<p class="profile__position">Senior Developer</p>
+			</div>
+		</div>
+	</section>
+	<section class="dashboard">
+		<div class="dashboard__container">
+			<!-- Отделы -->
+			<div class="departments">
+				<h3 class="department">My Courses</h3>
+				<h3 class="department">Wishlist</h3>
+				<h3 class="department">My Certificate</h3>
+			</div>
+
+			<!-- Карточки курсов -->
+			<div class="course-card card">
+				<div class="card-standart">
+					<div class="card-img">
+						<img src="{% static "deps/img/placeholder.jpg"%}" alt="Course Image"
+						/>
+					</div>
+					<div class="card-body">
+						<h3 class="course-title">Course Title</h3>
+						<p class="course-description">Short description of the course</p>
+						<div class="course-meta">
+							<span class="mentor">Tanah Air Team</span>
+							<span class="rating">⭐⭐⭐⭐⭐</span>
+							<span class="price">$199.99</span>
+						</div>
+					</div>
+				</div>
+				{% for course in courses %}
+				<div class="card-standart">
+					<div class="card-img">
+						{% if course.image %}
+						<img src="{{ course.image.url }}" alt="{{ course.name }}" />
+						{% else %} <img src="{% static "deps\img\image_not_found.jpg" %}"
+						alt=""> {% endif %}
+					</div>
+					<div class="card-body">
+						<a href="{% url 'catalog:course' course.slug %}">
+							<span class="course-title">
+								{% autoescape off %} {% if course.headline %} {{ course.headline
+								}} {% else %} {{ course.name }} {% endif %} {% endautoescape %}
+							</span>
+						</a>
+
+						<p class="course-description">
+							{{ course.description|truncatechars:50 }}
+						</p>
+						<div class="course-meta">
+							<span class="mentor">{{ course.mentor }}</span>
+							<span class="rating">
+								{% if course.rating %} {% for star in course.rating %}
+								<img src="{% static star %}" alt="★" class="rating-star" />
+								{% endfor %} {% else %}
+								<span>Нет рейтинга</span>
+								{% endif %}
+							</span>
+							<span class="price">
+								{% if course.discount %}
+								<span class="original-price">{{ course.formatted_price }}</span>
+								<span class="discounted-price"
+									>{{ course.formatted_sell_price }}</span
+								>
+								{% else %}
+								<span class="regular-price">{{ course.formatted_price }}</span>
+								{% endif %}
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+</main>
+{% endblock content %}

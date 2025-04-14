@@ -1,0 +1,26 @@
+[
+{
+  "model": "courses.categories",
+  "pk": 1,
+  "fields": {
+    "name": "All categories",
+    "slug": "all-categories"
+  }
+},
+{
+  "model": "courses.categories",
+  "pk": 2,
+  "fields": {
+    "name": "Design",
+    "slug": "design"
+  }
+},
+{
+  "model": "courses.categories",
+  "pk": 3,
+  "fields": {
+    "name": "Development",
+    "slug": "development"
+  }
+}
+]

@@ -1,0 +1,70 @@
+.header {
+	background-color: #666666;
+	color: #fff;
+}
+.header__search {
+	background-color: #666;
+}
+.header__search input {
+	background-color: #666;
+	color: #fff;
+}
+.header__search input::placeholder {
+	color: #fff;
+}
+ .custom-select{
+	/* background-color: #666;
+	color: #fff;*/
+} 
+.selected::after{
+	color: #fff;
+}
+.header__logo{	
+	fill : #fff;
+}
+.header__search {
+	border: 1px solid #fff;
+	background: #666;
+}
+.search-icon{
+	fill: #E5E5E5;
+}
+.header__btn-login {
+	border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+}
+.header__nav{
+	color: #1C3554;
+}
+
+.burger-menu {
+	color: #fff;
+}
+.selected::after {
+	background-image: url("data:image/svg+xml;utf8,<svg%20width='10'%20height='5'%20viewBox='0%200%2010%205'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'><path%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M0%200L5%205L10%200H0Z'%20fill='%23fff'/></svg>");
+}
+/* BREADCRUMB */
+.breadcrumb {
+  background-color: #666;
+}
+
+.breadcrumb-list {
+	display: flex;
+	gap: 10px;
+}
+  
+.breadcrumb-list li {
+	color: #fff;
+}
+
+.breadcrumb-list a {
+	color: #E5E5E5;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+	content: '>';
+	margin-left: 10px;
+	color: #E5E5E5;
+}
+/* BREADCRUMB */

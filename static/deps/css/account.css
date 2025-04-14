@@ -1,0 +1,57 @@
+.header__background {
+	height: 320px;
+	background-color: #666;
+	/* width: 100%; */
+}
+/* PROFILE */
+.profile__container	 {
+	margin-top: 50px;
+	display: flex;
+	align-items: center; /* Выравнивание по центру */
+	gap: 24px; /* Отступ между аватаркой и текстом */
+}
+
+.profile__avatar {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%; /* Делаем аватарку круглой */
+	object-fit: cover; /* Обрезает изображение, чтобы заполнить область */
+}
+
+.profile__info {
+	display: flex;
+	flex-direction: column;
+	gap: 8px; /* Отступ между именем и должностью */
+}
+.profile__position {
+	color: #808080;
+}
+
+/* PROFILE */
+/* DASHBOARD */
+.dashboard__container {
+	margin-top: 64px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.departments {
+	display: flex;
+	justify-content: center;
+	gap: 200px;
+	margin-bottom: 50px;
+}
+
+.department {
+font-weight: 400;
+	cursor: pointer;
+}
+
+.course-card {
+	/* border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; */
+}
+/* DASHBOARD */

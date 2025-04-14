@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+		<link rel="stylesheet" href="{% static "deps/css/home.css"%}" />
+		<link rel="stylesheet" href="{% static "deps/css/header-dark.css" %}" />
+{% endblock css %}
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<main class="main">
+			<section class="hero">
+				<div class="hero__container">
+					<!-- <div class="hero__bg"></div> -->
+					<img
+						src="{% static "deps/icons/bell.svg"%}"
+						class="hero__icon hero__icon--1"
+						alt=""
+					/>
+					<img
+						src="{% static "deps/icons/love.svg"%}"
+						class="hero__icon hero__icon--2"
+						alt=""
+					/>
+					<img
+						src="{% static "deps/icons/verification.svg" %}"
+						class="hero__icon hero__icon--3"
+						alt=""
+					/>
+					<h1 class="hero__title">Find the Best Courses and Amazing Mentor</h1>
+					<p class="hero__text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+						purus sit amet luctus venenatis, lectus magna fringilla urna,
+						porttitor rhoncus.
+					</p>
+
+					<div class="hero__search">
+						<img src="{% static "deps/icons/search-black.svg" %}" alt="Search" />
+						<input
+							type="text"
+							class="hero__input"
+							placeholder="Type in the course you want to learn"
+						/>
+						<button class="hero__search-btn pink-btn">Search</button>
+					</div>
+
+					<div class="hero__stats">
+						<div class="hero__facts">
+							<div class="hero__facts-elements">
+								<img src="{% static "deps/icons/icon1.svg" %}" alt="" />
+
+								<span class="hero__fact">Life Time Acces</span>
+							</div>
+							<div class="hero__facts-elements">
+								<img src="{% static "deps/icons/icon2.svg" %}" alt="" />
+
+								<span class="hero__fact">Expert Mentor</span>
+							</div>
+							<div class="hero__facts-elements">
+								<img src="{% static "deps/icons/icon3.svg" %}" alt="" />
+
+								<span class="hero__fact">100K+ Courses</span>
+							</div>
+						</div>
+						<div class="hero__review">
+							<div class="hero__review-box">
+								<p class="hero__review-nums">500+</p>
+								<p class="hero__review-text">Total Review</p>
+								<div class="hero__stars">
+									<span>⭐⭐⭐⭐⭐</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="trending-courses">
+				<div class="trending-courses__container">
+					<h2 class="courses-title">Trending Courses</h2>
+					<ul class="course-filters" aria-label="Course categories">
+						<li>
+							<button class="filter-btn active" aria-pressed="true">All</button>
+						</li>
+						<li><button class="filter-btn">Business</button></li>
+						<li><button class="filter-btn">Art & Design</button></li>
+						<li><button class="filter-btn">Development</button></li>
+						<li><button class="filter-btn">Marketing</button></li>
+					</ul>
+
+					<div class="courses card">
+						<div class="card-standart">
+							<div class="card-img">
+								<img src="{% static "deps/img/placeholder.jpg" %}" alt="Course Image" />
+							</div>
+							<div class="card-body">
+								<span class="course-title">Course Title</span>
+								<div class="course-meta">
+									<span class="mentor">Tanah Air Team</span>
+									<span class="rating">⭐⭐⭐⭐⭐</span>
+									<span class="price">$199.99</span>
+								</div>
+							</div>
+						</div>
+						<div class="card-standart">
+							<div class="card-img">
+								<img src="{% static "deps/img/placeholder.jpg" %}" alt="Course Image" />
+							</div>
+							<div class="card-body">
+								<span class="course-title">Course Title</span>
+								<div class="course-meta">
+									<span class="mentor">Tanah Air Team</span>
+									<span class="rating">⭐⭐⭐⭐⭐</span>
+									<span class="price">$199.99</span>
+								</div>
+							</div>
+						</div>
+						<div class="card-standart">
+							<div class="card-img">
+								<img src="{% static "deps/img/placeholder.jpg" %}" alt="Course Image" />
+							</div>
+							<div class="card-body">
+								<span class="course-title">Course Title</span>
+								<div class="course-meta">
+									<span class="mentor">Tanah Air Team</span>
+									<span class="rating">⭐⭐⭐⭐⭐</span>
+									<span class="price">$199.99</span>
+								</div>
+							</div>
+						</div>
+						<div class="card-standart">
+							<div class="card-img">
+								<img src="{% static "deps/img/placeholder.jpg" %}" alt="Course Image" />
+							</div>
+							<div class="card-body">
+								<span class="course-title">Course Title</span>
+								<div class="course-meta">
+									<span class="mentor">Tanah Air Team</span>
+									<span class="rating">⭐⭐⭐⭐⭐</span>
+									<span class="price">$199.99</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="more-courses-btn">
+						<button class="pink-btn">More Courses</button>
+					</div>
+				</div>
+			</section>
+			<section class="categories">
+				<div class="categories__container">
+					<h2 class="categories-title">Top Categories</h2>
+					<div class="categories-grid">
+						<div class="category-card">
+							<img src="{% static "deps/img/placeholder-for-categories.jpg" %}" alt="Business" />
+							<h4 class="category-name">Business</h4>
+						</div>
+						<div class="category-card">
+							<img src="{% static "deps/img/placeholder-for-categories.jpg" %}" alt="Design" />
+							<h4 class="category-name">Design</h4>
+						</div>
+						<div class="category-card">
+							<img src="{% static "deps/img/placeholder-for-categories.jpg" %}" alt="IT & Software" />
+							<h4 class="category-name">IT & Software</h4>
+						</div>
+						<div class="category-card">
+							<img src="{% static "deps/img/placeholder-for-categories.jpg" %}" alt="Marketing" />
+							<h4 class="category-name">Marketing</h4>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="stats">
+				<div class="stats__container">
+					<div class="stats-card">
+						<img src="{% static "deps/icons/courses.svg"%}" alt="Icon 1" class="stats-icon" />
+						<span class="stats-number">120K+</span>
+						<p class="stats-text">Students</p>
+					</div>
+					<div class="stats-card">
+						<img
+							src="{% static "deps/icons/active-students.svg"%}"
+							alt="Icon 2"
+							class="stats-icon"
+						/>
+						<span class="stats-number">1500+</span>
+						<p class="stats-text">Courses</p>
+					</div>
+					<div class="stats-card">
+						<img
+							src="{% static "deps/icons/active-mentor.svg" %}"
+							alt="Icon 3"
+							class="stats-icon"
+						/>
+						<span class="stats-number">50+</span>
+						<p class="stats-text">Instructors</p>
+					</div>
+					<div class="stats-card">
+						<img
+							src="{% static "deps/icons/countries.svg" %}"
+							alt="Icon 4"
+							class="stats-icon"
+						/>
+						<span class="stats-number">98%</span>
+						<p class="stats-text">Satisfaction</p>
+					</div>
+				</div>
+				<img class="stats__deco" src="{% static "deps/img/stats-deco.svg" %}" alt="" />
+			</section>
+			<section class="become-mentor">
+				<div class="become-mentor__container">
+					<img src="{% static "deps/img/mentor.jpg"%}" alt="Описание фото" />
+					<div class="text-content">
+						<h2 class="title">Become an Mentor</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas in,
+							veniam iusto ea esse hic mollitia cum necessitatibus tempore
+							corporis praesentium omnis earum. Repellendus corporis, quisquam
+							aspernatur earum necessitatibus facere.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+							quos repellendus. Suscipit ipsum adipisci voluptatibus et quam
+							nobis, a unde!
+						</p>
+						<button class="text-content__button pink-btn">Start Teaching</button>
+					</div>
+				</div>
+			</section>
+			{% comment %} NOT FINISHED {% endcomment %}
+			<section class="review">
+				<div class="review__container">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="review__slide">
+									<div class="review__image">
+										<img src="{% static "deps/img/mentor-photo.jpg"%}" alt="Фото отзыва" />
+									</div>
+									<div class="review__content">
+										<p class="review__text">
+											After studying here I gained new knowledge and insights.
+											The mentor was very friendly and guided me to get the
+											knowledge I wanted. Thank you!
+										</p>
+										<p class="review__name">KecekArif</p>
+										<p class="review__additional-text">
+											Yang punya Surabaya nanti kapan - kapan tapi
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="review__slide">
+									<div class="review__image">
+										<img src="{% static "deps/img/mentor-photo.jpg"%}" alt="Фото отзыва" />
+									</div>
+									<div class="review__content">
+										<p class="review__text">
+											After studying here I gained new knowledge and insights.
+										</p>
+										<p class="review__name">KecekArif</p>
+										<p class="review__additional-text">
+											Yang punya Surabaya nanti kapan - kapan tapi
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="s-button-prev">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M16.707 4.70697L9.41403 12L16.707 19.293L15.293 20.707L6.58603 12L15.293 3.29297L16.707 4.70697Z"
+									fill="#1C3554"
+								/>
+							</svg>
+						</div>
+						<div class="s-button-next">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M7.29297 4.70697L14.586 12L7.29297 19.293L8.70697 20.707L17.414 12L8.70697 3.29297L7.29297 4.70697Z"
+									fill="#1C3554"
+								/>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="trusted-companies">
+				<div class="trusted-companies__container">
+					<h2 class="trusted-companies__title">Trusted by Company</h2>
+					<div class="trusted-companies__logos">
+						<div class="logo"><img src="{% static "deps/img_vector/logo1.svg" %}" alt="Logo 2" /></div>
+						<div class="logo"><img src="{% static "deps/img_vector/logo2.svg" %}" alt="Logo 1" /></div>
+						<div class="logo"><img src="{% static "deps/img_vector/logo3.svg" %}" alt="Logo 3" /></div>
+						<div class="logo"><img src="{% static "deps/img_vector/logo1.svg" %}" alt="Logo 4" /></div>
+						<div class="logo"><img src="{% static "deps/img_vector/logo3.svg" %}" alt="Logo 4" /></div>
+						<div class="logo"><img src="{% static "deps/img_vector/logo6.svg" %}" alt="Logo 4" /></div>
+					</div>
+				</div>
+			</section>
+			<section class="blog">
+				<div class="blog__container">
+					<h2 class="blog-card__title">The Latest Blog</h2>
+					<div class="card blog-card">
+						<div class="card-standart blog__card">
+							<div class="blog-card-img card-img">
+								<img src="{% static "deps/img/placeholder-for-cards.jpg"%}" alt="Blog Image" />
+							</div>
+							<div class="card-standart-body">
+								<p class="date">3, Mei 2021</p>
+								<h4 class="course-title blog-title">
+									10 graphic design trends to get you inspired in 2021
+								</h4>
+								<p class="card-standart-description blog-description">
+									Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed
+									do eiusmod.
+								</p>
+								<a class="read-more" href="#">Read More</a>
+							</div>
+						</div>
+						<div class="card-standart blog__card">
+							<div class="blog-card-img card-img">
+								<img src="{% static "deps/img/placeholder-for-cards.jpg"%}" alt="Blog Image" />
+							</div>
+							<div class="card-standart-body">
+								<p class="date">3, Mei 2021</p>
+								<h4 class="course-title blog-title">
+									10 graphic design trends to get you inspired in 2021
+								</h4>
+								<p class="card-standart-description blog-description">
+									Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed
+									do eiusmod.
+								</p>
+								<a class="read-more" href="#">Read More</a>
+							</div>
+						</div>
+						<div class="card-standart blog__card">
+							<div class="blog-card-img card-img">
+								<img src="{% static "deps/img/placeholder-for-cards.jpg"%}" alt="Blog Image" />
+							</div>
+							<div class="card-standart-body">
+								<p class="date">3, Mei 2021</p>
+								<h4 class="course-title blog-title">
+									10 graphic design trends to get you inspired in 2021
+								</h4>
+								<p class="card-standart-description blog-description">
+									Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed
+									do eiusmod.
+								</p>
+								<a class="read-more" href="#">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock content %}
+
+
+		
+

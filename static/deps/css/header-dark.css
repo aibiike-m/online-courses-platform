@@ -1,0 +1,43 @@
+.header__logo{	
+	fill : #021934;
+}
+.header__search {
+	border: 1px solid #ccc;
+	background: white;
+}
+.search-icon{
+	fill: #CCCCCC;
+}
+
+.header__btn-login {
+	border: 1px solid #1c3554;
+  color: #1c3554;
+  background-color: transparent;
+}
+.selected::after {
+	background-image: url("data:image/svg+xml;utf8,<svg%20width='10'%20height='5'%20viewBox='0%200%2010%205'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'><path%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M0%200L5%205L10%200H0Z'%20fill='%231C3554'/></svg>");
+}
+.breadcrumb__container {
+	/* padding: 15px 0; */
+  /* padding-bottom: 64px; */
+}
+
+.breadcrumb-list {
+	display: flex;
+	gap: 10px;
+}
+  
+.breadcrumb-list li {
+	color: #1c3554;
+}
+
+.breadcrumb-list a {
+	color: #808080;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+	content: '>';
+	margin-left: 10px;
+	color: #808080;
+}
+/* BREADCRUMB */

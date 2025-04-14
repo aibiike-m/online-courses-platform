@@ -1,0 +1,62 @@
+[
+{
+  "model": "courses.courses",
+  "pk": 1,
+  "fields": {
+    "name": "Advanced JavaScript: Modern Patterns",
+    "slug": "advanced-javascript-modern-patterns",
+    "image": "",
+    "description": "Short desctiption",
+    "price": "100.00",
+    "discount": "10.00",
+    "created_at": "2025-04-09T12:08:43.562Z",
+    "is_popular": false,
+    "category": 3
+  }
+},
+{
+  "model": "courses.courses",
+  "pk": 2,
+  "fields": {
+    "name": "Django Web Development: Full Guide",
+    "slug": "django-web-development-full-guide",
+    "image": "",
+    "description": "Short desctiption",
+    "price": "200.00",
+    "discount": "0.00",
+    "created_at": "2025-04-09T12:09:05.805Z",
+    "is_popular": false,
+    "category": 3
+  }
+},
+{
+  "model": "courses.courses",
+  "pk": 3,
+  "fields": {
+    "name": "Data Science Fundamentals with Python",
+    "slug": "data-science-fundamentals-with-python",
+    "image": "",
+    "description": "Looooooooooong desctiption",
+    "price": "250.00",
+    "discount": "5.00",
+    "created_at": "2025-04-09T12:09:43.543Z",
+    "is_popular": false,
+    "category": 3
+  }
+},
+{
+  "model": "courses.courses",
+  "pk": 4,
+  "fields": {
+    "name": "Design for beginers",
+    "slug": "design-for-beginers",
+    "image": "",
+    "description": "This course is about design",
+    "price": "200.00",
+    "discount": "10.00",
+    "created_at": "2025-04-09T12:10:34.166Z",
+    "is_popular": false,
+    "category": 2
+  }
+}
+]

@@ -1,0 +1,668 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+		<link rel="stylesheet" href="css/detail-courses.css" />
+		<link rel="stylesheet" href="css/header-light.css" />
+{% endblock %}
+	{% block breadcrumb_current %}How to become an Expert Web Developer{% endblock %}
+	{% block content %}
+		<main>
+			<section class="page-header">
+				<div class="page-header__container">
+					<h2 class="course__main-title">
+						{{course.name}}
+					</h2>
+					<div class="course__raiting">⭐⭐⭐⭐⭐</div>
+					<div class="course__author">
+						<img
+							class="course__aouthor-ava"
+							src="{% static "deps/img/slider-photo2.jpg"%}"
+							alt=""
+						/>
+
+						<div class="course__author-name">Pak Arif Satria Kecek ulalala</div>
+					</div>
+					<div class="course-buttons">
+						<button class="course-button pink-btn">
+							Add To Wishlist
+							<img src="{% static "deps/img_vector/add.svg"%}" alt="Button 1" />
+						</button>
+						<button class="course-button light-pink-btn">
+							Share
+							<img src="{% static "deps/img_vector/share.svg"%}" alt="Button 2" />
+						</button>
+					</div>
+				</div>
+			</section>
+			<section class="course">
+				<div class="course__container">
+					<div class="course__main-content">
+						<div class="course__left">
+							<div class="mt-big">
+								<h3 class="course__title">
+									What you’ll learn from this course
+								</h3>
+								<div class="course__content">
+									<p class="course__text">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Nostrum tempora aliquam esse deleniti itaque dolorum veniam
+										expedita at magni mollitia autem ad, nihil inventore quis
+										quo corrupti amet rem maxime.
+									</p>
+								</div>
+							</div>
+							<div class="mt-big">
+								<h3 class="course__title">Objectives & Features</h3>
+								<div class="course__content">
+									<ul class="course__features">
+										<li class="course__feature">
+											<span class="course__icon" aria-hidden="true">
+												<img
+													src="{% static "deps/img_vector/check-mark.svg"%}"
+													alt="Included feature"
+												/>
+											</span>
+											Build fully websites and web apps for your startup or
+											business.
+										</li>
+										<li class="course__feature">
+											<span class="course__icon"
+												><img src="{% static "deps/img_vector/check-mark.svg"%}" alt=""
+											/></span>
+											Craft a portfolio of websites to apply for junior
+											developer jobs.
+										</li>
+										<li class="course__feature">
+											<span class="course__icon"
+												><img src="{% static "deps/img_vector/check-mark.svg"%}" alt=""
+											/></span>
+											Craft a portfolio of websites to apply for junior
+											developer jobs.
+										</li>
+
+									</ul>
+								</div>
+							</div>
+							<div class="mt-big">
+								<h3 class="course__title">Requirement</h3>
+								<div class="course__content">
+									<ul class="course__requirements">
+										<li class="course__requirement">
+											<span class="course__icon">
+												<img
+													src="{% static "deps/img_vector/check-mark.svg"%}"
+													alt="Required item"
+												/>
+											</span>
+											Build fully websites and web apps for your startup or
+											business.
+										</li>
+
+										<li class="course__requirement">
+											<span class="course__icon"
+												><img src="{% static "deps/img_vector/check-mark.svg"%}" alt=""
+											/></span>
+											Build fully websites and web apps for your startup or
+											business.
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mt-big">
+								<div class="course-modules__header">
+									<h3 class="course__title">Module Courses</h3>
+									<span class="course-modules__info"
+										>24 Modules - 124 Lectures - 24h 12m</span
+									>
+								</div>
+								<div class="course__content">
+									<div class="modules__list">
+										<div class="modules__item">
+											<button
+												class="modules__head"
+												aria-controls="module1-content"
+											>
+												<span class="modules__head-title"
+													>Introducing to Web Development</span
+												>
+												<span class="modules__item-icon">
+													<svg
+														width="24"
+														height="24"
+														viewBox="0 0 24 24"
+														fill="none"
+														aria-hidden="true"
+													>
+														<path
+															fill-rule="evenodd"
+															clip-rule="evenodd"
+															d="M12 14.5858L19.2929 7.29289L20.7071 8.70711L12 17.4142L3.29289 8.70711L4.70711 7.29289L12 14.5858Z"
+															fill="#1C3554"
+														/>
+													</svg>
+												</span>
+											</button>
+											<div id="module1-content" class="modules__body">
+												<div class="modules__body-list">
+													<div class="modules__body-item">
+														<div class="modules__body-item-left">
+															<span class="modules__body-icon">
+																<img src="{% static "deps/img_vector/play_circle.svg"%}" alt="" />
+															</span>
+
+															<span class="modules__body-title">Welcome!</span>
+														</div>
+														<span class="modules__body-duration">01:24</span>
+													</div>
+													<div class="modules__body-item">
+														<div class="modules__body-item-left">
+															<span class="modules__body-icon">
+																<img src="{% static "deps/img_vector/play_circle.svg"%}" alt="" />
+															</span>
+															<span class="modules__body-title"
+																>Syllabus download</span
+															>
+														</div>
+														<span class="modules__body-duration">01:24</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<aside class="course__sidebar mt-big">
+							<div class="course__video">
+								<iframe
+									width="560"
+									height="315"
+									src="https://www.youtube.com/embed/w-ITLbRfhnA?si=xnT69XyO_sU5ia8F"
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									referrerpolicy="strict-origin-when-cross-origin"
+									allowfullscreen
+								></iframe>
+							</div>
+							<div class="course__sidebar-content">
+								<p class="course__price">$100</p>
+								<ul class="course__details">
+									<li>
+										<span class="course__sidebar-icon">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												x="0px"
+												y="0px"
+												width="32"
+												height="32"
+												viewBox="0 0 24 24"
+												style="fill: #4586d6"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M11,16.061l-4.054-4.053l1.061-1.061L11,13.939	l4.985-4.986l1.061,1.061L11,16.061z"
+												></path>
+											</svg>
+										</span>
+										<span class="course__sidebar-text">24 Modules</span>
+									</li>
+									<li>
+										<span class="course__sidebar-icon">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												x="0px"
+												y="0px"
+												width="32"
+												height="32"
+												viewBox="0 0 24 24"
+												style="fill: #4586d6"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M11,16.061l-4.054-4.053l1.061-1.061L11,13.939	l4.985-4.986l1.061,1.061L11,16.061z"
+												></path>
+											</svg>
+										</span>
+										<span class="course__sidebar-text">Full time access</span>
+									</li>
+									<li>
+										<span class="course__sidebar-icon">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												x="0px"
+												y="0px"
+												width="32"
+												height="32"
+												viewBox="0 0 24 24"
+												style="fill: #4586d6"
+											>
+												<path
+													d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M11,16.061l-4.054-4.053l1.061-1.061L11,13.939	l4.985-4.986l1.061,1.061L11,16.061z"
+												></path>
+											</svg>
+										</span>
+										<span class="course__sidebar-text">Certificate</span>
+									</li>
+								</ul>
+								<div class="course__actions">
+									<button class="btn--secondary pink-btn">Add To Cart</button>
+									<button class="btn--primary">Buy Now</button>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</div>
+				<section class="course-mentor mt-big">
+					<div class="course-mentor__container">
+						<h3 class="course-mentor__title">Mentor</h3>
+						<div class="mentor">
+							<img
+								class="mentor__photo"
+								src="{% static "deps/img/mentor-photo.jpg"%}"
+								alt="John Doe, Senior Developer and Expert Instructor"
+								width="300"
+								height="320"
+								loading="lazy"
+							/>
+							<div class="mentor__content">
+								<h3 class="mentor__name">John Doe</h3>
+								<p class="mentor__position">
+									Senior Developer, Expert Instructor
+								</p>
+								<div
+									class="mentor__rating"
+									aria-label="Rating: 4.9 out of 5 stars"
+								>
+									<span aria-hidden="true">⭐⭐⭐⭐⭐</span> (4.9)
+								</div>
+								<p class="mentor__bio">
+									John has over 10 years of experience in web development,
+									teaching thousands of students worldwide.
+								</p>
+								<ul class="mentor__stats">
+									<li class="mentor__stat">
+										<span class="mentor__stat-icon" aria-hidden="true"></span>
+										15 Courses
+									</li>
+									<li class="mentor__stat">
+										<span class="mentor__stat-icon" aria-hidden="true"></span>
+										10,000 Students
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="feedback mt-big">
+					<div class="feedback__container">
+						<h3 class="feedback__title">Feedback</h3>
+						<div class="feedback__content">
+							<div class="feedback__overview">
+								<div class="rating-score">4.8</div>
+								<div
+									class="stars stars--large"
+									aria-label="Rating: 4.8 out of 5"
+								>
+									<span class="star star--filled"></span>
+									<span class="star star--filled"></span>
+									<span class="star star--filled"></span>
+									<span class="star star--filled"></span>
+									<span class="star star--half"></span>
+								</div>
+								<p class="rating-label">Course Rating</p>
+							</div>
+							<div class="feedback__details">
+								<div class="rating-item">
+									<div class="rating-bar">
+										<div class="bar-progress" style="--width: 80%"></div>
+									</div>
+									<div class="stars stars--small">
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+									</div>
+									<div class="rating-count">1,200</div>
+								</div>
+
+								<div class="rating-item">
+									<div class="rating-bar">
+										<div class="bar-progress" style="--width: 15%"></div>
+									</div>
+									<div class="stars stars--small">
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--empty"></span>
+									</div>
+									<div class="rating-count">300</div>
+								</div>
+
+								<div class="rating-item">
+									<div class="rating-bar">
+										<div class="bar-progress" style="--width: 3%"></div>
+									</div>
+									<div class="stars stars--small">
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--empty"></span>
+										<span class="star star--empty"></span>
+									</div>
+									<div class="rating-count">50</div>
+								</div>
+
+								<div class="rating-item">
+									<div class="rating-bar">
+										<div class="bar-progress" style="--width: 1%"></div>
+									</div>
+									<div class="stars stars--small">
+										<span class="star star--filled"></span>
+										<span class="star star--filled"></span>
+										<span class="star star--empty"></span>
+										<span class="star star--empty"></span>
+										<span class="star star--empty"></span>
+									</div>
+									<div class="rating-count">10</div>
+								</div>
+
+								<div class="rating-item">
+									<div class="rating-bar">
+										<div class="bar-progress" style="--width: 1%"></div>
+									</div>
+									<div class="stars stars--small">
+										<span class="star star--filled"></span>
+										<span class="star star--empty"></span>
+										<span class="star star--empty"></span>
+										<span class="star star--empty"></span>
+										<span class="star star--empty"></span>
+									</div>
+									<div class="rating-count">5</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="reviews mt-big">
+					<div class="reviews__container">
+						<div class="reviews__header">
+							<h2 class="reviews__title">Reviews</h2>
+							<button class="button--outline pink-btn">
+								All Ratings
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M12 17.414L3.293 8.70697L4.707 7.29297L12 14.586L19.293 7.29297L20.707 8.70697L12 17.414Z"
+										fill="white"
+									/>
+								</svg>
+							</button>
+						</div>
+
+						<div class="reviews__list">
+							<article class="review">
+								<div class="review__header">
+									<div class="review__author">
+										<img
+											src="{% static "deps/img/person1.jpg"%}"
+											alt="John Doe"
+											class="review__avatar"
+											width="80"
+											height="80"
+											loading="lazy"
+										/>
+										<div class="review__meta">
+											<p class="review__name">John Doe</p>
+											<div
+												class="stars stars--large"
+												aria-label="Rating: 4.8 out of 5"
+											>
+												<span class="star star--filled"></span>
+												<span class="star star--filled"></span>
+												<span class="star star--filled"></span>
+												<span class="star star--filled"></span>
+											</div>
+											<time class="review__date" datetime="2024-03-12"
+												>March 12, 2024</time
+											>
+										</div>
+									</div>
+
+									<div class="review__actions">
+										<button
+											class="review-button like-button"
+											aria-label="Like review"
+										>
+											<svg
+												width="40"
+												height="40"
+												viewBox="0 0 40 40"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M36.6667 19.9985C36.6667 17.1943 34.7827 14.9985 31.6667 14.9985H26.545C26.5599 14.9575 26.5753 14.9155 26.5913 14.8722C26.6377 14.7469 26.7682 14.4028 26.8951 14.0685C27.0073 13.7728 27.1165 13.4849 27.1618 13.3633C27.4787 12.5127 27.7099 11.8274 27.897 11.1487C28.1798 10.1228 28.3333 9.19864 28.3333 8.33179C28.3333 5.87844 26.8198 4.35465 24.5805 3.7026C23.5705 3.4085 22.6913 3.33163 21.6667 3.33179H20.8675L20.3671 3.95493C19.8019 4.65885 18.6917 5.9275 17.4117 7.39012C15.0504 10.0883 12.1115 13.4466 10.9506 15.1375C10.6494 15.048 10.3303 14.9999 10 14.9999H6.66667C4.82572 14.9999 3.33334 16.4923 3.33334 18.3333V33.3333C3.33334 35.1742 4.82572 36.6666 6.66667 36.6666H10C11.1452 36.6666 12.1555 36.0891 12.7556 35.2094C13.2612 35.5364 13.8254 35.8094 14.4385 36.0288C15.8424 36.531 17.2347 36.6853 18.3907 36.6641L30 36.6651C34.5919 36.6651 36.6667 29.9044 36.6667 19.9985ZM15.5615 32.8903C14.0866 32.3626 13.3333 31.5022 13.3333 29.9985V18.3333V18.3318C13.3333 17.9315 13.4074 17.577 13.5695 17.1984C13.8608 16.5185 16.5032 13.5037 19.0078 10.6463C20.3004 9.17151 21.5563 7.73866 22.4333 6.69034C22.8523 6.72177 23.2473 6.78617 23.6486 6.90301C24.6036 7.18111 25 7.58016 25 8.33179C25 8.85942 24.8932 9.50231 24.6836 10.2628C24.5269 10.8311 24.324 11.4324 24.0382 12.1996C23.9977 12.3084 23.8965 12.5751 23.7889 12.8586C23.6577 13.2044 23.517 13.5753 23.4649 13.716C23.2482 14.3021 23.1054 14.7336 23.0078 15.1256C22.5926 16.7924 23.0091 18.3318 25 18.3318H31.6667C32.8187 18.3318 33.3333 18.9316 33.3333 19.9985C33.3333 27.983 31.6919 33.3318 30 33.3318H18.3333L18.2718 33.3328C17.5423 33.3459 16.5177 33.2324 15.5615 32.8903ZM6.66667 33.3333V18.3333H10V33.3333H6.66667Z"
+													fill="#1C3554"
+												/>
+											</svg>
+										</button>
+										<button
+											class="review-button dislike-button"
+											aria-label="Dislike review"
+										>
+											<svg
+												width="40"
+												height="40"
+												viewBox="0 0 40 40"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M23.8951 22.9299C23.7682 22.5957 23.6377 22.2515 23.5913 22.1262C23.5753 22.0829 23.5599 22.0409 23.545 22H28.6667C31.7827 22 33.6667 19.8041 33.6667 17C33.6667 7.09401 31.5919 0.333294 27 0.333294C27 0.333294 15.3719 0.333669 15.3315 0.332815C14.2347 0.313145 12.8424 0.467373 11.4385 0.96966C10.8251 1.18915 10.2607 1.46224 9.7549 1.78946C9.15473 0.910359 8.14475 0.333294 7 0.333294H3.66666C1.82571 0.333294 0.333328 1.82568 0.333328 3.66663V18.6666C0.333328 20.5076 1.82571 22 3.66666 22H7C7.33059 22 7.64995 21.9518 7.95144 21.8622C9.11293 23.5534 12.051 26.9107 14.4117 29.6083L14.4117 29.6083C15.6916 31.0709 16.8019 32.3396 17.3671 33.0435L17.8675 33.6666H18.6795C19.6913 33.6668 20.5705 33.5899 21.5805 33.2958C23.8198 32.6438 25.3333 31.12 25.3333 28.6666C25.3333 27.7998 25.1798 26.8756 24.897 25.8497C24.7099 25.171 24.4787 24.4857 24.1618 23.6351C24.1165 23.5135 24.0072 23.2256 23.8951 22.9299ZM10.3333 18.6666V6.99996C10.3333 5.49624 11.0866 4.63584 12.5615 4.10816C13.5177 3.76602 14.5423 3.65253 15.276 3.66564C21.1204 3.66634 22.8384 3.66654 24.5564 3.6666L27 3.66663C28.6919 3.66663 30.3333 9.01539 30.3333 17C30.3333 18.0668 29.8187 18.6666 28.6667 18.6666H22C20.0091 18.6666 19.5926 20.206 20.0077 21.8728C20.1054 22.2649 20.2482 22.6963 20.4649 23.2824C20.517 23.4231 20.6577 23.7941 20.7889 24.1398L20.7897 24.142L20.7907 24.1446C20.8976 24.4264 20.9979 24.6906 21.0382 24.7989C21.324 25.566 21.5269 26.1673 21.6836 26.7356C21.8932 27.4961 22 28.139 22 28.6666C22 29.4183 21.6036 29.8173 20.6486 30.0954C20.2473 30.2122 19.8523 30.2766 19.4333 30.3081C18.5563 29.2598 17.3004 27.8269 16.0078 26.3522L16.0077 26.3521C13.5032 23.4947 10.8607 20.48 10.5695 19.8C10.4074 19.4214 10.3333 19.067 10.3333 18.6666ZM3.66666 18.6666V3.66663H7V18.6666H3.66666Z"
+													fill="#1C3554"
+												/>
+											</svg>
+										</button>
+									</div>
+								</div>
+
+								<div class="review__content">
+									<p>
+										This course was amazing! I learned a lot and the instructor
+										was very clear. Lorem ipsum dolor sit amet, consectetur
+										adipiscing elit. Vitae non id interdum massa enim posuere.
+										Tempus, risus varius rhoncus ipsum, sed egestas nisi
+										pellentesque.
+									</p>
+								</div>
+							</article>
+							<article class="review">
+								<div class="review__header">
+									<div class="review__author">
+										<img
+											src="{% static "deps/img/person2.jpg"%}"
+											alt="John Doe"
+											class="review__avatar"
+											width="80"
+											height="80"
+											loading="lazy"
+										/>
+										<div class="review__meta">
+											<p class="review__name">John Doe</p>
+											<div
+												class="stars stars--large"
+												aria-label="Rating: 4.8 out of 5"
+											>
+												<span class="star star--filled"></span>
+												<span class="star star--filled"></span>
+												<span class="star star--filled"></span>
+												<span class="star star--filled"></span>
+											</div>
+											<time class="review__date" datetime="2024-03-12"
+												>March 12, 2024</time
+											>
+										</div>
+									</div>
+
+									<div class="review__actions">
+										<button
+											class="review-button like-button"
+											aria-label="Like review"
+										>
+											<svg
+												width="40"
+												height="40"
+												viewBox="0 0 40 40"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M36.6667 19.9985C36.6667 17.1943 34.7827 14.9985 31.6667 14.9985H26.545C26.5599 14.9575 26.5753 14.9155 26.5913 14.8722C26.6377 14.7469 26.7682 14.4028 26.8951 14.0685C27.0073 13.7728 27.1165 13.4849 27.1618 13.3633C27.4787 12.5127 27.7099 11.8274 27.897 11.1487C28.1798 10.1228 28.3333 9.19864 28.3333 8.33179C28.3333 5.87844 26.8198 4.35465 24.5805 3.7026C23.5705 3.4085 22.6913 3.33163 21.6667 3.33179H20.8675L20.3671 3.95493C19.8019 4.65885 18.6917 5.9275 17.4117 7.39012C15.0504 10.0883 12.1115 13.4466 10.9506 15.1375C10.6494 15.048 10.3303 14.9999 10 14.9999H6.66667C4.82572 14.9999 3.33334 16.4923 3.33334 18.3333V33.3333C3.33334 35.1742 4.82572 36.6666 6.66667 36.6666H10C11.1452 36.6666 12.1555 36.0891 12.7556 35.2094C13.2612 35.5364 13.8254 35.8094 14.4385 36.0288C15.8424 36.531 17.2347 36.6853 18.3907 36.6641L30 36.6651C34.5919 36.6651 36.6667 29.9044 36.6667 19.9985ZM15.5615 32.8903C14.0866 32.3626 13.3333 31.5022 13.3333 29.9985V18.3333V18.3318C13.3333 17.9315 13.4074 17.577 13.5695 17.1984C13.8608 16.5185 16.5032 13.5037 19.0078 10.6463C20.3004 9.17151 21.5563 7.73866 22.4333 6.69034C22.8523 6.72177 23.2473 6.78617 23.6486 6.90301C24.6036 7.18111 25 7.58016 25 8.33179C25 8.85942 24.8932 9.50231 24.6836 10.2628C24.5269 10.8311 24.324 11.4324 24.0382 12.1996C23.9977 12.3084 23.8965 12.5751 23.7889 12.8586C23.6577 13.2044 23.517 13.5753 23.4649 13.716C23.2482 14.3021 23.1054 14.7336 23.0078 15.1256C22.5926 16.7924 23.0091 18.3318 25 18.3318H31.6667C32.8187 18.3318 33.3333 18.9316 33.3333 19.9985C33.3333 27.983 31.6919 33.3318 30 33.3318H18.3333L18.2718 33.3328C17.5423 33.3459 16.5177 33.2324 15.5615 32.8903ZM6.66667 33.3333V18.3333H10V33.3333H6.66667Z"
+													fill="#1C3554"
+												/>
+											</svg>
+										</button>
+										<button
+											class="review-button dislike-button"
+											aria-label="Dislike review"
+										>
+											<svg
+												width="40"
+												height="40"
+												viewBox="0 0 40 40"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M23.8951 22.9299C23.7682 22.5957 23.6377 22.2515 23.5913 22.1262C23.5753 22.0829 23.5599 22.0409 23.545 22H28.6667C31.7827 22 33.6667 19.8041 33.6667 17C33.6667 7.09401 31.5919 0.333294 27 0.333294C27 0.333294 15.3719 0.333669 15.3315 0.332815C14.2347 0.313145 12.8424 0.467373 11.4385 0.96966C10.8251 1.18915 10.2607 1.46224 9.7549 1.78946C9.15473 0.910359 8.14475 0.333294 7 0.333294H3.66666C1.82571 0.333294 0.333328 1.82568 0.333328 3.66663V18.6666C0.333328 20.5076 1.82571 22 3.66666 22H7C7.33059 22 7.64995 21.9518 7.95144 21.8622C9.11293 23.5534 12.051 26.9107 14.4117 29.6083L14.4117 29.6083C15.6916 31.0709 16.8019 32.3396 17.3671 33.0435L17.8675 33.6666H18.6795C19.6913 33.6668 20.5705 33.5899 21.5805 33.2958C23.8198 32.6438 25.3333 31.12 25.3333 28.6666C25.3333 27.7998 25.1798 26.8756 24.897 25.8497C24.7099 25.171 24.4787 24.4857 24.1618 23.6351C24.1165 23.5135 24.0072 23.2256 23.8951 22.9299ZM10.3333 18.6666V6.99996C10.3333 5.49624 11.0866 4.63584 12.5615 4.10816C13.5177 3.76602 14.5423 3.65253 15.276 3.66564C21.1204 3.66634 22.8384 3.66654 24.5564 3.6666L27 3.66663C28.6919 3.66663 30.3333 9.01539 30.3333 17C30.3333 18.0668 29.8187 18.6666 28.6667 18.6666H22C20.0091 18.6666 19.5926 20.206 20.0077 21.8728C20.1054 22.2649 20.2482 22.6963 20.4649 23.2824C20.517 23.4231 20.6577 23.7941 20.7889 24.1398L20.7897 24.142L20.7907 24.1446C20.8976 24.4264 20.9979 24.6906 21.0382 24.7989C21.324 25.566 21.5269 26.1673 21.6836 26.7356C21.8932 27.4961 22 28.139 22 28.6666C22 29.4183 21.6036 29.8173 20.6486 30.0954C20.2473 30.2122 19.8523 30.2766 19.4333 30.3081C18.5563 29.2598 17.3004 27.8269 16.0078 26.3522L16.0077 26.3521C13.5032 23.4947 10.8607 20.48 10.5695 19.8C10.4074 19.4214 10.3333 19.067 10.3333 18.6666ZM3.66666 18.6666V3.66663H7V18.6666H3.66666Z"
+													fill="#1C3554"
+												/>
+											</svg>
+										</button>
+									</div>
+								</div>
+
+								<div class="review__content">
+									<p>
+										This course was amazing! I learned a lot and the instructor
+										was very clear. Lorem ipsum dolor sit amet, consectetur
+										adipiscing elit. Vitae non id interdum massa enim posuere.
+										Tempus, risus varius rhoncus ipsum, sed egestas nisi
+										pellentesque.
+									</p>
+								</div>
+							</article>
+						</div>
+
+						<button class="load-more-btn pink-btn">More Reviews</button>
+					</div>
+				</section>
+			</section>
+			<section class="more-courses mt-big">
+				<div class="more-courses__container">
+					<h3 class="more-courses__title">More Courses from Arif Kecek</h3>
+					<div class="more-courses__grid body-container">
+						<div class="course-card card">
+							<div class="card-standart">
+								<div class="card-img">
+									<img src="{% static "deps/img/placeholder.jpg"%}" alt="Course Image" />
+								</div>
+								<div class="card-body">
+									<h3 class="course-title">Course Title</h3>
+									<p class="course-description">
+										Short description of the course
+									</p>
+									<div class="course-meta">
+										<span class="mentor">Tanah Air Team</span>
+										<span class="rating">⭐⭐⭐⭐⭐</span>
+										<span class="price">$199.99</span>
+									</div>
+								</div>
+							</div>
+							<div class="card-standart">
+								<div class="card-img">
+									<img src="{% static "deps/img/placeholder.jpg"%}" alt="Course Image" />
+								</div>
+								<div class="card-body">
+									<h3 class="course-title">Course Title</h3>
+									<p class="course-description">
+										Short description of the course
+									</p>
+									<div class="course-meta">
+										<span class="mentor">Tanah Air Team</span>
+										<span class="rating">⭐⭐⭐⭐⭐</span>
+										<span class="price">$199.99</span>
+									</div>
+								</div>
+							</div>
+							<div class="card-standart">
+								<div class="card-img">
+									<img src="{% static "deps/img/placeholder.jpg"%}" alt="Course Image" />
+								</div>
+								<div class="card-body">
+									<h3 class="course-title">Course Title</h3>
+									<p class="course-description">
+										Short description of the course
+									</p>
+									<div class="course-meta">
+										<span class="mentor">Tanah Air Team</span>
+										<span class="rating">⭐⭐⭐⭐⭐</span>
+										<span class="price">$199.99</span>
+									</div>
+								</div>
+							</div>
+							<div class="card-standart">
+								<div class="card-img">
+									<img src="{% static "deps/img/placeholder.jpg"%}" alt="Course Image" />
+								</div>
+								<div class="card-body">
+									<h3 class="course-title">Course Title</h3>
+									<p class="course-description">
+										Short description of the course
+									</p>
+									<div class="course-meta">
+										<span class="mentor">Tanah Air Team</span>
+										<span class="rating">⭐⭐⭐⭐⭐</span>
+										<span class="price">$199.99</span>
+									</div>
+								</div>
+							</div>
+							<div class="card-standart">
+								<div class="card-img">
+									<img src="{% static "deps/img/placeholder.jpg"%}" alt="Course Image" />
+								</div>
+								<div class="card-body">
+									<h3 class="course-title">Course Title</h3>
+									<p class="course-description">
+										Short description of the course
+									</p>
+									<div class="course-meta">
+										<span class="mentor">Tanah Air Team</span>
+										<span class="rating">⭐⭐⭐⭐⭐</span>
+										<span class="price">$199.99</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+{% endblock content %}
+		
