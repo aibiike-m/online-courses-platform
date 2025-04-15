@@ -65,9 +65,8 @@ button {
 	color: #fff;
 }
 .pink-btn:hover {
-	background-color: #d71f7f;
+	background-color: #d61a6e;
 	color: #fff;
-	/* border-color: #; */
 }
 .light-pink-btn{
 	border: none;
@@ -476,7 +475,7 @@ justify-content: space-between;
 	padding: clamp(1.5rem, 0.591rem + 4.55vw, 4rem)
 		clamp(1.5rem, 0.227rem + 6.36vw, 5rem);
 	border-radius: 8px;
-	margin: clamp(2rem, -0.909rem + 14.55vw, 10rem)
+	margin: clamp(1.5rem, -0.909rem + 14.55vw, 8rem)
 		clamp(1rem, 0.455rem + 2.73vw, 2.5rem)
 		clamp(1rem, 0.455rem + 2.73vw, 2.5rem);
 }

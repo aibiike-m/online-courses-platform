@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block css %}
-		<link rel="stylesheet" href="css/detail-courses.css" />
-		<link rel="stylesheet" href="css/header-light.css" />
+		<link rel="stylesheet" href="{% static "deps/css/detail-courses.css"%}" />
+		<link rel="stylesheet" href="{% static "deps/css/header-light.css" %}" />
 {% endblock %}
 	{% block breadcrumb_current %}How to become an Expert Web Developer{% endblock %}
 	{% block content %}
@@ -17,7 +17,7 @@
 					<div class="course__author">
 						<img
 							class="course__aouthor-ava"
-							src="{% static "deps/img/slider-photo2.jpg"%}"
+							src="{% static "deps/img/person1.jpg"%}"
 							alt=""
 						/>
 
@@ -26,11 +26,11 @@
 					<div class="course-buttons">
 						<button class="course-button pink-btn">
 							Add To Wishlist
-							<img src="{% static "deps/img_vector/add.svg"%}" alt="Button 1" />
+							<img src="{% static "deps/icons/add.svg"%}" alt="Button 1" />
 						</button>
 						<button class="course-button light-pink-btn">
 							Share
-							<img src="{% static "deps/img_vector/share.svg"%}" alt="Button 2" />
+							<img src="{% static "deps/icons/share.svg"%}" alt="Button 2" />
 						</button>
 					</div>
 				</div>
@@ -59,7 +59,7 @@
 										<li class="course__feature">
 											<span class="course__icon" aria-hidden="true">
 												<img
-													src="{% static "deps/img_vector/check-mark.svg"%}"
+													src="{% static "deps/icons/check-mark.svg"%}"
 													alt="Included feature"
 												/>
 											</span>
@@ -68,14 +68,14 @@
 										</li>
 										<li class="course__feature">
 											<span class="course__icon"
-												><img src="{% static "deps/img_vector/check-mark.svg"%}" alt=""
+												><img src="{% static "deps/icons/check-mark.svg"%}" alt=""
 											/></span>
 											Craft a portfolio of websites to apply for junior
 											developer jobs.
 										</li>
 										<li class="course__feature">
 											<span class="course__icon"
-												><img src="{% static "deps/img_vector/check-mark.svg"%}" alt=""
+												><img src="{% static "deps/icons/check-mark.svg"%}" alt=""
 											/></span>
 											Craft a portfolio of websites to apply for junior
 											developer jobs.
@@ -91,7 +91,7 @@
 										<li class="course__requirement">
 											<span class="course__icon">
 												<img
-													src="{% static "deps/img_vector/check-mark.svg"%}"
+													src="{% static "deps/icons/check-mark.svg"%}"
 													alt="Required item"
 												/>
 											</span>
@@ -101,7 +101,7 @@
 
 										<li class="course__requirement">
 											<span class="course__icon"
-												><img src="{% static "deps/img_vector/check-mark.svg"%}" alt=""
+												><img src="{% static "deps/icons/check-mark.svg"%}" alt=""
 											/></span>
 											Build fully websites and web apps for your startup or
 											business.
@@ -148,7 +148,7 @@
 													<div class="modules__body-item">
 														<div class="modules__body-item-left">
 															<span class="modules__body-icon">
-																<img src="{% static "deps/img_vector/play_circle.svg"%}" alt="" />
+																<img src="{% static "deps/icons/play_circle.svg"%}" alt="" />
 															</span>
 
 															<span class="modules__body-title">Welcome!</span>
@@ -158,7 +158,7 @@
 													<div class="modules__body-item">
 														<div class="modules__body-item-left">
 															<span class="modules__body-icon">
-																<img src="{% static "deps/img_vector/play_circle.svg"%}" alt="" />
+																<img src="{% static "deps/icons/play_circle.svg"%}" alt="" />
 															</span>
 															<span class="modules__body-title"
 																>Syllabus download</span
