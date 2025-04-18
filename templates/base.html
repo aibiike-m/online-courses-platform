@@ -23,7 +23,7 @@
 		<div class="overlay" onclick="toggleMenu()"></div>
 		<header class="header">
 			<div class="header__container">
-				<a href="{% url "main:index"%}" class="header__logo">
+				<a href="{% url "main:index"%}" class="header__logo colorful-icon">
 					<svg viewBox="0 0 161 32" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M0 10.6653V16.5895C2.01585 16.5881 4.01219 16.9859 5.87479 17.7601C7.73739 18.5343 9.4297 19.6697 10.8549 21.1015C12.2797 22.5327 13.4097 24.2319 14.1802 26.1019C14.9507 27.9719 15.3466 29.9762 15.3453 32H21.2402C21.2349 26.344 18.9955 20.9212 15.0135 16.9215C11.0314 12.9217 5.632 10.6717 0 10.6653H0Z"
@@ -63,7 +63,7 @@
 					</svg>
 				</a>
 				<div class="header__search-container">
-    <form action="{% url 'catalog:search' %}" method="get" class="header__search">
+    		<form action="{% url 'catalog:search' %}" method="get" class="header__search">
         <input type="text" 
                class="header__input" 
                name="q" 
@@ -96,10 +96,23 @@
 				</div>
 				<input type="hidden" id="category" name="category" value="all" />
 				<a href="#" class="header__mentor">Become a Mentor</a>
+				{% if not user.is_authenticated %}
 				<div class="header__buttons">
 					<button class="header__btn-login white-btn">Login</button>
 					<button class="header__btn-register pink-btn">Sign Up</button>
 				</div>
+				{% else %}
+				<div class="user-profile">
+					<a href="{% url "user:profile" %}" class="profile-link">
+						<svg class="colorful-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M7.41 8.59009L12 13.1701L16.59 8.59009L18 10.0001L12 16.0001L6 10.0001L7.41 8.59009Z" />
+						</svg>
+
+						<img src="{% static 'deps/css/img/person2' %}" alt="User Avatar" class="user-avatar">
+						<span class="username">{{ request.user.username }}</span>
+					</a>
+    		</div>
+				{% endif %}
 				<div class="header__menu">
 					<button class="burger-menu" onclick="toggleMenu()">☰</button>
 				</div>
@@ -111,12 +124,14 @@
 				<li><a href="#">Support</a></li>
 				<li><a href="#">Company</a></li>
 				<li><a href="#">Become a mentor</a></li>
+				
 				<div class="header__buttons">
 					<a href="login.html" class="header__btn-login white-btn">Login</a>
-					<a href="login.html" class="header__btn-login pink-btn">Login</a>
+					<a href="register.html" class="header__btn-register pink-btn">Sign Up</a>					
 					{% comment %} <button class="header__btn-login white-btn">Login</button>
 					<button class="header__btn-register pink-btn">Sign Up</button> {% endcomment %}
 				</div>
+				
 			</ul>
 		</header>
     {% block breadcrumbs %}
@@ -129,6 +144,7 @@
         </div>
     </nav>
     {% endblock %}
+		{% include "includes/notifications.html" %}
     {% block content %}
     {% endblock content %}
 		<footer class="footer">

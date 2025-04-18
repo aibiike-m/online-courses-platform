@@ -1,3 +1,7 @@
+.colorful-icon{
+	fill: #fff;
+
+}
 .header {
 	background-color: #666666;
 	color: #fff;
@@ -18,9 +22,6 @@
 } 
 .selected::after{
 	color: #fff;
-}
-.header__logo{	
-	fill : #fff;
 }
 .header__search {
 	border: 1px solid #fff;

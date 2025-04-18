@@ -20,6 +20,7 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
 select {
 	appearance: none;
 }
@@ -49,7 +50,8 @@ h3 {
 	font-size: clamp(1.25rem, 0.977rem + 1.36vw, 2rem);
 	font-weight: 700;
 }
-button {
+button,
+.btn {
 	font-size: inherit;
 	font-family: inherit;
 	border-radius: 8px;
@@ -59,31 +61,38 @@ button {
 	border: none;
 }
 
-.pink-btn{
+.pink-btn,
+a.pink-btn {
 	border: none;
 	background-color: #f72585;
 	color: #fff;
 }
-.pink-btn:hover {
+.pink-btn:hover,
+a.pink-btn:hover {
 	background-color: #d61a6e;
 	color: #fff;
 }
-.light-pink-btn{
+.light-pink-btn,
+a.light-pink-btn {
 	border: none;
 	background: #fff5f9;
 	color: #f72585;
 }
-.light-pink-btn:hover {
+.light-pink-btn:hover,
+a.light-pink-btn:hover {
 	background: #ffe6f0;
 }
 
-.white-btn{
+.white-btn,
+a.white-btn {
 	border: #1c3554;
 	background: #fff;
 }
-.white-btn:hover {
-	background: #ffe6f0;
+.white-btn:hover,
+a.white-btn:hover {
+	background: #e5e5e5;
 }
+
 /* [class*='__container'] {
     width: 100%;
     margin-right: auto;
@@ -107,15 +116,10 @@ button {
 	justify-content: center;
 	align-items: center;
 	gap: clamp(0.313rem, -0.119rem + 2.16vw, 1.5rem);
-	padding: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem)
-		clamp(0.625rem, -1.42rem + 10.23vw, 6.25rem);
+	padding-top: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+	padding-bottom: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
 	transition: all 0.3s ease;
-}
-.header__container::before,
-.header__container::after {
-	content: '';
-	flex: 1;
-	min-width: 20px; /* Минимальный отступ */
+	transition: all 0.3s ease;
 }
 .header__logo svg {
 	width: clamp(4.375rem, 2.33rem + 10.23vw, 10rem);
@@ -225,9 +229,27 @@ button {
 	color: #1c3554;
 	border-color: #1c3554;
 }
-/* MENU */
-/* Меню */
+.header__nav .user-profile {
+	margin-left: 20px; 
+}
 
+.profile-link {
+	display: flex;
+	align-items: center;
+	gap: 8px; 
+}
+
+.user-avatar {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.username {
+	font-size: 14px;
+}
+/* MENU */
 .header__nav {
 	display: none;
 	position: fixed;
@@ -295,7 +317,11 @@ button {
 	.header__buttons {
 		display: none;
 	}
+	.user-profile{
+		display: none;
+	}
 }
+
 
 @media (max-width: 768px) {
 	.header__search-container {
@@ -422,7 +448,7 @@ justify-items: center; */
 .card-body {
 	display: flex;
 	flex-direction: column;
-justify-content: space-between;
+	justify-content: space-between;
 	height: clamp(8rem, 7.273rem + 3.64vw, 10rem);
 	margin-top: 26px;
 }
