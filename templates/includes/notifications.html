@@ -1,0 +1,19 @@
+<div class="notification-container">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+            <div id="notification" class="notification notification-success">
+                {{ message }}
+            </div>
+            {% endif %}
+            {% if message.tags == 'warning' %}
+            <div id="notification" class="notification notification-danger">
+                {{ message }}
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    <div id="jq-notification" class="notification notification-success" style="display: none;">
+    </div>
+    {% endif %}
+</div>

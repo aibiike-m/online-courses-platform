@@ -1,0 +1,157 @@
+.profile-wrapper {
+	display: flex;
+	justify-content: center;
+	padding: clamp(1rem, 0.273rem + 3.64vw, 8rem);
+}
+
+.profile-container {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	padding: clamp(1.5rem, 0.636rem + 1.82vw, 2rem);
+	width: 100%;
+}
+
+.profile-header {
+	text-align: center;
+	padding: 20px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.profile-header h1 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.profile-content {
+	display: flex;
+	padding: 20px;
+	gap: 40px;
+}
+
+.avatar-section {
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.avatar-wrapper {
+	width: 150px;
+	height: 150px;
+	margin-bottom: 20px;
+}
+
+.avatar-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #ddd;
+	margin-bottom: 20px;
+}
+
+.avatar-upload-input {
+	display: none;
+}
+
+.file-name {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.file-name.has-file {
+    color: #d61a6e; 
+    font-weight: 500;
+}
+
+
+.fields-section {
+	flex: 1;
+	min-width: 0;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 8px;
+	color: #666;
+	font-size: 14px;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	background: white;
+	font-family: 'Montserrat', serif;
+}
+
+.form-group input:focus {
+	border-color: #d61a6e;
+	outline: none;
+}
+
+.form-group input:disabled {
+	background: #f9f9f9;
+	color: #666;
+}
+
+.form-row {
+	display: flex;
+	gap: 20px;
+}
+
+.form-col {
+	flex: 1;
+}
+
+.form-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 15px;
+	padding: 20px;
+}
+
+.btn {
+	padding: 12px;
+	width: auto;
+	min-width: 120px;
+	border-radius: 8px;
+}
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.profile-content {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.avatar-section {
+		width: 100%;
+		padding-bottom: 20px;
+	}
+
+	.form-row {
+		flex-direction: column;
+		gap: 0;
+	}
+}
+.avatar-controls {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+

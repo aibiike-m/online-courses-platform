@@ -98,20 +98,27 @@
 				<a href="#" class="header__mentor">Become a Mentor</a>
 				{% if not user.is_authenticated %}
 				<div class="header__buttons">
-					<button class="header__btn-login white-btn">Login</button>
-					<button class="header__btn-register pink-btn">Sign Up</button>
+					<button class="header__btn-login white-btn"  onclick="location.href='{% url 'user:login' %}'" >Login</button>
+					<button class="header__btn-register pink-btn" onclick="location.href='{% url 'user:registration' %}'">Sign Up</button>
 				</div>
 				{% else %}
-				<div class="user-profile">
-					<a href="{% url "user:profile" %}" class="profile-link">
-						<svg class="colorful-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M7.41 8.59009L12 13.1701L16.59 8.59009L18 10.0001L12 16.0001L6 10.0001L7.41 8.59009Z" />
-						</svg>
+				<div class="user-profile custom-select">
+					<div class="profile-link selected">
+							{% if user.image %}
+									<img src="{{ user.image.url }}" alt="User Avatar" class="header-avatar">
+							{% else %}
+									<img src="{% static 'deps/img/default-avatar.png' %}" alt="User Avatar" class="header-avatar">
+							{% endif %}
+							<span class="username">{{ request.user.username }}</span>
+					</div>
 
-						<img src="{% static 'deps/css/img/person2' %}" alt="User Avatar" class="user-avatar">
-						<span class="username">{{ request.user.username }}</span>
-					</a>
-    		</div>
+					
+					<div class="options"> 
+							<div class="option"><a href="{% url 'user:profile' %}">My profile</a></div>
+							<div class="option"><a href="{% url 'user:profile_settings' %}">Profile settings</a></div>
+							<div class="option"><a href="{% url 'user:logout' %}">Log out</a></div>
+					</div>
+			</div>
 				{% endif %}
 				<div class="header__menu">
 					<button class="burger-menu" onclick="toggleMenu()">☰</button>
@@ -124,13 +131,12 @@
 				<li><a href="#">Support</a></li>
 				<li><a href="#">Company</a></li>
 				<li><a href="#">Become a mentor</a></li>
-				
-				<div class="header__buttons">
-					<a href="login.html" class="header__btn-login white-btn">Login</a>
-					<a href="register.html" class="header__btn-register pink-btn">Sign Up</a>					
-					{% comment %} <button class="header__btn-login white-btn">Login</button>
-					<button class="header__btn-register pink-btn">Sign Up</button> {% endcomment %}
+				{% if not user.is_authenticated %}
+				<div class="header__buttons">			
+					<button class="header__btn-login white-btn" onclick="location.href='{% url 'user:login' %}'" >Login</button>
+					<button class="header__btn-register pink-btn"onclick="location.href='{% url 'user:registration' %}'" >Sign Up</button> 
 				</div>
+				{% endif %}
 				
 			</ul>
 		</header>

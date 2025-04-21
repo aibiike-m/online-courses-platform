@@ -35,12 +35,19 @@
   color: #fff;
   background-color: transparent;
 }
+.options{
+	color: #1C3554;
+}
 .header__nav{
 	color: #1C3554;
 }
 
 .burger-menu {
 	color: #fff;
+}
+.burger-menu:hover {
+	background: none;
+	color: #ccc;
 }
 .selected::after {
 	background-image: url("data:image/svg+xml;utf8,<svg%20width='10'%20height='5'%20viewBox='0%200%2010%205'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'><path%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M0%200L5%205L10%200H0Z'%20fill='%23fff'/></svg>");

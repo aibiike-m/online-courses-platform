@@ -12,8 +12,8 @@
 	<div class="login-wrapper">
 		<div class="login-container">
 			<div class="login-header">
-				<h1>Create Account</h1>
-				<p>Fill out the form to register</p>
+				<h1>Login</h1>
+				<p>Fill out the form to login</p>
 			</div>
 
 
@@ -38,9 +38,7 @@
 						required
 
 					/>
-					
 				</div>
-
 				<div class="form-group">
 					<label for="id_password">Password</label>
 					<input
@@ -52,59 +50,6 @@
 						required
 					/>
 				</div>
-				{% comment %} <div class="form-group">
-					<label for="{{form.username.id_for_label }}">Username</label>
-					{{ form.username }}
-					<div class="error-message" id="username-error">
-						Invalid username
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="{{form.password.id_for_label }}">Password</label>
-					{{ form.password}}
-					<div class="error-message" id="password-error">Invalid password</div>
-				</div> {% endcomment %}
-
-				{% comment %} <div class="form-group">
-					<label for="username">Username</label>
-					<input
-						type="text"
-						id="username"
-						name="username"
-						placeholder="Enter your username"
-						required
-						class="username-input"
-
-					/>
-					<div class="error-message" id="username-error">
-						Invalid username
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="password">Password</label>
-					<input
-						type="password"
-						id="password"
-						name="password"
-						placeholder="Введите пароль"
-						required
-					/>
-					<div class="error-message" id="password-error">Invalid password</div>
-				</div>
-
-				<div class="remember-forgot">
-					<div class="remember-me">
-						<input type="checkbox" id="remember"/>
-						<label for="remember">Remember me</label>
-					</div>
-					<div class="forgot-password">
-						<a href="#">Forgot password?</a>
-					</div>
-				</div>
-				{% endcomment %}
-
 				<button type="submit" class="login-button pink-btn">Login</button> 
 			</form>
 

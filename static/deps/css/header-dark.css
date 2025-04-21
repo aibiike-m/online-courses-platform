@@ -17,6 +17,10 @@
 .selected::after {
 	background-image: url("data:image/svg+xml;utf8,<svg%20width='10'%20height='5'%20viewBox='0%200%2010%205'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'><path%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M0%200L5%205L10%200H0Z'%20fill='%231C3554'/></svg>");
 }
+.burger-menu:hover {
+	background: none;
+	color: #d71f7f;
+}
 .breadcrumb__container {
 	/* padding: 15px 0; */
   /* padding-bottom: 64px; */
