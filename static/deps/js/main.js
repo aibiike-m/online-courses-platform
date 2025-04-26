@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		}
 	}
-	// 2. Модули и фильтры 
+	// 2. Модули и фильтры
 	function initAccordions() {
 		document.querySelectorAll('.modules__head').forEach(item => {
 			item.addEventListener('click', function (e) {
@@ -224,16 +224,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		const notifications = document.querySelectorAll('.notification')
 		notifications.forEach(notification => {
-			// Автозакрытие через 7 секунд
 			setTimeout(() => closeNotification(notification), 5000)
 
-			// Закрытие по клику
 			notification.addEventListener('click', () =>
 				closeNotification(notification)
 			)
 		})
 	}
-
 	// Инициализация всех компонентов
 	initProfileSection()
 	initAccordions()
@@ -242,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	initHeaderSearch()
 	initBurgerMenu()
 	initNotifications()
+	initAccountTabs()
 })
 
 // const swiper = new Swiper('.swiper', {

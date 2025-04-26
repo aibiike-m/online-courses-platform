@@ -24,7 +24,7 @@
 						<div class="course__author-name">Pak Arif Satria Kecek ulalala</div>
 					</div>
 					<div class="course-buttons">
-						<button class="course-button pink-btn">
+						<button class="course-button pink-btn" onclick="location.href='{% url 'wishlist:wishlist_add' course.slug %}'">
 							Add To Wishlist
 							<img src="{% static "deps/icons/add.svg"%}" alt="Button 1" />
 						</button>

@@ -24,6 +24,7 @@ urlpatterns = [
     path("", include("main.urls", namespace="main")),
     path("catalog/", include("courses.urls", namespace="catalog")),
     path("user/", include("users.urls", namespace="user")),
+    path("wishlist/", include("wishlists.urls", namespace="wishlist")),
 ]
 
 if settings.DEBUG:

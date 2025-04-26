@@ -1,0 +1,47 @@
+{% load static %}
+{% if wishlists %}
+    {% for item in wishlists %}
+    <div class="card-standart">
+        <div class="card-img">
+            {% if item.course.image %}
+                <img src="{{ item.course.image.url }}" alt="{{ item.course.name }}" />
+            {% else %}
+                <img src="{% static 'deps/img/image_not_found.png' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="card-body">
+            <a href="{% url 'catalog:course' item.course.slug %}">
+                <span class="course-title">
+                    {% autoescape off %}
+                        {% if item.course.headline %}
+                            {{ item.course.headline|truncatechars:20 }}
+                        {% else %}
+                            {{ item.course.name|truncatechars:20 }}
+                        {% endif %}
+                    {% endautoescape %}
+                </span>
+            </a>
+            <div class="course-meta">
+                <span class="mentor">{{ item.course.mentor|truncatechars:30 }}</span>
+                <span class="rating">
+                    {% if item.course.rating %}
+                        {% for star in item.course.rating %}
+                            <img src="{% static star %}" alt="★" class="rating-star" />
+                        {% endfor %}
+                    {% else %}
+                        <span>No rating</span>
+                    {% endif %}
+                </span>
+                <span class="price">
+                    {% if item.course.discount %}
+                        <span class="original-price">{{ item.course.formatted_price }}</span>
+                        <span class="discounted-price">{{ item.course.formatted_sell_price }}</span>
+                    {% else %}
+                        <span class="regular-price">{{ item.course.formatted_price }}</span>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endif %}

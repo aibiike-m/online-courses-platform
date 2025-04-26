@@ -30,10 +30,12 @@ class Courses(models.Model):
     def __str__(self):
         return self.name
 
+    @property
     def sell_price(self):
         if self.discount and 0 < self.discount <= 100:
             price = float(self.price) if not isinstance(self.price, (int, float)) else self.price
-            return round (price - (price * float(self.discount) / 100, 2))
+            discounted_price = price - (price * float(self.discount) / 100)
+            return round(discounted_price, 2)
         return self.price
 
     @property

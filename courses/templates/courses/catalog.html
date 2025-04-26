@@ -189,8 +189,8 @@
                 <div class="search-content">
 										<form method="get" action="{% if request.GET.q %}{% url "catalog:search" %}{% else %}{% url 'catalog:index' slug_url %}{% endif %}">
 											{% if request.GET.q %}
-    <input type="hidden" name="q" value="{{ request.GET.q }}">
-    {% endif %}
+                                            <input type="hidden" name="q" value="{{ request.GET.q }}">
+                                            {% endif %}
 											<aside class="filters">
 													<div class="filter-section">
 															<div class="filter-section__header">
@@ -290,7 +290,7 @@
                                         {% if course.image %}
                                             <img src="{{ course.image.url }}" alt="{{ course.name }}" />
                                         {% else %}
-                                            <img src="{% static "deps\img\image_not_found.jpg" %}" alt="">
+                                            <img src="{% static "deps\img\image_not_found.png" %}" alt="">
                                         {% endif %}
                                     </div>
                                     <div class="card-body">
