@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			)
 		})
 	}
+
 	// Инициализация всех компонентов
 	initProfileSection()
 	initAccordions()

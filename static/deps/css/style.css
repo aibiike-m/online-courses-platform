@@ -460,6 +460,10 @@ justify-items: center; */
 	height: 16px;
 	object-fit: contain;
 }
+.card-bottom{
+	display: flex;
+	justify-content: space-between;
+}
 .price {
 	display: flex;
 	align-items: center;
@@ -477,6 +481,15 @@ justify-items: center; */
 	font-size: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
 	font-weight: 500;
 }
+.trash-bin{
+	color: #808080;
+	margin-right: 4px;
+}
+.trash-bin:hover{
+	color: #f72585;
+}
+
+
 /* CARD */
 
 /* FOOTER */
