@@ -79,7 +79,7 @@ button {
 }
 
 .white-btn {
-	border: #1c3554;
+	border:  1px solid #1c3554;
 	background: #fff;
 }
 .white-btn:hover {
@@ -481,14 +481,6 @@ justify-items: center; */
 	font-size: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
 	font-weight: 500;
 }
-.trash-bin{
-	color: #808080;
-	margin-right: 4px;
-}
-.trash-bin:hover{
-	color: #f72585;
-}
-
 
 /* CARD */
 

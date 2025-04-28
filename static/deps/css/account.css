@@ -41,7 +41,7 @@
 	display: flex;
 	justify-content: center;
 	gap: clamp(1rem, -3.182rem + 20.91vw, 12.5rem);
-	align-items: flex-end; 
+	align-items: flex-end;
 }
 .department {
 	color: #808080;
@@ -54,7 +54,7 @@
 
 .department.active {
 	font-weight: 600;
-	color: #1C3554;
+	color: #1c3554;
 }
 
 .department.active::after {
@@ -65,19 +65,19 @@
 	width: 100%;
 	height: 5px;
 	border-radius: 2.5px;
-	background-color: #F72585;
+	background-color: #f72585;
 }
 
 .tab-content {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease;
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+	transition: opacity 0.3s ease;
 }
 .tab-content.active {
-    opacity: 1;
-    height: auto;
-    overflow: visible;
+	opacity: 1;
+	height: auto;
+	overflow: visible;
 }
 
 .tab-content.active {
@@ -85,3 +85,35 @@
 }
 
 /* DASHBOARD */
+/* CARDS */
+.trash-bin {
+	color: #808080;
+	margin-right: 4px;
+}
+.trash-bin:hover {
+	color: #f72585;
+}
+.wishlist-actions {
+	display: flex;
+	gap: 10px;
+	padding: 10px 0;
+	margin-bottom: 16px;
+	margin-right: auto;
+}
+.cancel-btn,
+.delete-btn {
+	padding: 8px 24px;
+	
+}
+.trash-bin {
+	color: #808080;
+	margin-right: 4px;
+	transition: color 0.2s;
+}
+.trash-bin:hover {
+	color: #555;
+}
+.trash-bin.wishlist-selected {
+	color: #f72585;
+}
+/* CARDS */

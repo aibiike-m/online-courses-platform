@@ -1,5 +1,17 @@
-{% load static %}
+{% comment %} {% load static %}
 <div class="course-card card">
 {% include "wishlists/includes/included-wishlist.html " %}
+</div> {% endcomment %}
+
+{% load static %}
+<div class="wishlist-actions" style="display: none;">
+    <button type="button" class="white-btn cancel-btn">Cancel</button>
+    <button type="submit" form="wishlist-form" class="delete-btn pink-btn ">Delete</button>
 </div>
 
+<div class="course-card card">
+    <form id="wishlist-form" method="post" action="{% url 'wishlists:wishlist_remove_selected' %}">
+        {% csrf_token %}
+        {% include "wishlists/includes/included-wishlist.html" %}
+    </form>
+</div>

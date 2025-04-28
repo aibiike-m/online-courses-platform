@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import redirect, render
 
 
@@ -17,3 +18,11 @@ def wishlist_remove(request, wishlist_id):
     wishlist = Wishlist.objects.get(id=wishlist_id)
     wishlist.delete()
     return redirect(request.META["HTTP_REFERER"])
+
+
+def wishlist_remove_selected(request):
+    if request.method == "POST":
+        wishlist_ids = request.POST.getlist("wishlist_ids")
+        Wishlist.objects.filter(id__in=wishlist_ids, user=request.user).delete()
+        return JsonResponse({"success": True})
+    return JsonResponse({"success": False}, status=400)

@@ -1,5 +1,121 @@
 document.addEventListener('DOMContentLoaded', function () {
-	// 1. Функционал профиля пользователя (аватар, форма редактирования)
+	// =============================================
+	// 1. WISHLIST FUNCTIONALITY
+	// =============================================
+	function initWishlist() {
+		const removeButtons = document.querySelectorAll('.remove-from-wishlist')
+		const wishlistForm = document.getElementById('wishlist-form')
+		const wishlistActions = document.querySelector('.wishlist-actions')
+		const cancelBtn = document.querySelector('.cancel-btn')
+
+		if (
+			!removeButtons.length ||
+			!wishlistForm ||
+			!wishlistActions ||
+			!cancelBtn
+		)
+			return
+
+		// Toggle selection for wishlist items
+		function toggleWishlistItem(button) {
+			const wishlistId = button.getAttribute('data-wishlist-id')
+			const checkbox = document.querySelector(`#wishlist-${wishlistId}`)
+			const trashIcon = button.closest('.trash-bin')
+			checkbox.checked = !checkbox.checked
+			trashIcon.classList.toggle('wishlist-selected')
+			const selectedCount = document.querySelectorAll(
+				'.wishlist-checkbox:checked'
+			).length
+
+			wishlistActions.style.display = selectedCount > 0 ? 'flex' : 'none'
+		}
+
+		// Reset all selections
+		function resetSelections() {
+			document.querySelectorAll('.wishlist-checkbox').forEach(checkbox => {
+				checkbox.checked = false
+			})
+
+			document.querySelectorAll('.trash-bin').forEach(trash => {
+				trash.classList.remove('wishlist-selected')
+			})
+
+			wishlistActions.style.display = 'none'
+		}
+
+		// Handle bulk deletion
+		async function handleBulkDeletion() {
+			const selectedItems = Array.from(
+				document.querySelectorAll('.wishlist-checkbox:checked')
+			).map(el => el.value)
+
+			if (selectedItems.length === 0) {
+				alert('Выберите хотя бы один курс для удаления')
+				return false
+			}
+
+			if (
+				!confirm(
+					`Вы уверены, что хотите удалить ${selectedItems.length} курсов?`
+				)
+			) {
+				return false
+			}
+
+			try {
+				const params = new URLSearchParams()
+				selectedItems.forEach(id => params.append('wishlist_ids', id))
+
+				const response = await fetch(wishlistForm.action, {
+					method: 'POST',
+					headers: {
+						'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]')
+							.value,
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: params,
+				})
+
+				const data = await response.json()
+
+				if (data.success) {
+					selectedItems.forEach(id => {
+						const item = document.querySelector(
+							`.wishlist-item input[value="${id}"]`
+						)
+						item?.closest('.wishlist-item').remove()
+					})
+					resetSelections()
+					return true
+				} else {
+					throw new Error('Server error')
+				}
+			} catch (error) {
+				console.error('Error:', error)
+				alert('Произошла ошибка при удалении')
+				return false
+			}
+		}
+
+		// Event listeners
+		removeButtons.forEach(button => {
+			button.addEventListener('click', function (e) {
+				e.preventDefault()
+				toggleWishlistItem(this)
+			})
+		})
+
+		cancelBtn.addEventListener('click', resetSelections)
+
+		wishlistForm.addEventListener('submit', async function (e) {
+			e.preventDefault()
+			await handleBulkDeletion()
+		})
+	}
+
+	// =============================================
+	// 2. PROFILE SECTION
+	// =============================================
 	function initProfileSection() {
 		const editBtn = document.getElementById('edit-btn')
 		const cancelBtn = document.getElementById('cancel-btn')
@@ -8,49 +124,52 @@ document.addEventListener('DOMContentLoaded', function () {
 		const fileInput = document.getElementById('id_image')
 		const fileNameDisplay = document.getElementById('file-name-display')
 		const inputs = document.querySelectorAll('.profile-form input')
+		const profileForm = document.getElementById('profile-form')
+
+		if (!editBtn || !cancelBtn || !saveBtn || !profileForm) return
 
 		let originalValues = {}
 
-		if (editBtn && cancelBtn && saveBtn) {
-			editBtn.addEventListener('click', e => {
-				e.stopPropagation()
-
-				// Сохранение исходных значений перед редактированием
-				inputs.forEach(input => {
+		// Toggle edit mode
+		function toggleEditMode(edit = true) {
+			inputs.forEach(input => {
+				if (edit) {
 					originalValues[input.id] = input.value
 					input.disabled = false
-				})
-
-				editBtn.classList.add('hidden')
-				cancelBtn.classList.remove('hidden')
-				saveBtn.classList.remove('hidden')
-				if (avatarUploadBtn) avatarUploadBtn.classList.remove('hidden')
-			})
-
-			cancelBtn.addEventListener('click', e => {
-				e.stopPropagation()
-
-				inputs.forEach(input => {
+				} else {
 					input.value = originalValues[input.id] || ''
 					input.disabled = true
-				})
+				}
+			})
 
-				editBtn.classList.remove('hidden')
-				cancelBtn.classList.add('hidden')
-				saveBtn.classList.add('hidden')
-				if (avatarUploadBtn) avatarUploadBtn.classList.add('hidden')
-				if (fileInput) fileInput.value = ''
+			editBtn.classList.toggle('hidden', !edit)
+			cancelBtn.classList.toggle('hidden', edit)
+			saveBtn.classList.toggle('hidden', edit)
+			if (avatarUploadBtn) avatarUploadBtn.classList.toggle('hidden', edit)
+
+			if (!edit && fileInput) {
+				fileInput.value = ''
 				if (fileNameDisplay) {
 					fileNameDisplay.textContent = 'No file selected'
 					fileNameDisplay.classList.remove('has-file')
 				}
-			})
+			}
 		}
 
-		// Обработчик изменения файла
+		// Event listeners
+		editBtn.addEventListener('click', e => {
+			e.stopPropagation()
+			toggleEditMode(true)
+		})
+
+		cancelBtn.addEventListener('click', e => {
+			e.stopPropagation()
+			toggleEditMode(false)
+		})
+
 		if (fileInput && fileNameDisplay) {
 			fileInput.addEventListener('change', function () {
-				if (this.files && this.files.length > 0) {
+				if (this.files?.length > 0) {
 					fileNameDisplay.textContent = this.files[0].name
 					fileNameDisplay.classList.add('has-file')
 				} else {
@@ -60,19 +179,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		}
 
-		const profileForm = document.getElementById('profile-form')
-		if (profileForm) {
-			profileForm.addEventListener('submit', function (e) {
-				inputs.forEach(input => (input.disabled = true))
-				if (editBtn) editBtn.classList.remove('hidden')
-				if (cancelBtn) cancelBtn.classList.add('hidden')
-				if (saveBtn) saveBtn.classList.add('hidden')
-				if (avatarUploadBtn) avatarUploadBtn.classList.add('hidden')
-			})
-		}
+		profileForm.addEventListener('submit', function () {
+			inputs.forEach(input => (input.disabled = true))
+			toggleEditMode(false)
+		})
 	}
-	// 2. Модули и фильтры
+
+	// =============================================
+	// 3. ACCORDIONS AND FILTERS
+	// =============================================
 	function initAccordions() {
+		// Modules accordion
 		document.querySelectorAll('.modules__head').forEach(item => {
 			item.addEventListener('click', function (e) {
 				e.stopPropagation()
@@ -80,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		})
 
+		// Filter sections
 		document.querySelectorAll('.filter-section__header').forEach(header => {
 			header.addEventListener('click', function (e) {
 				e.stopPropagation()
@@ -88,8 +206,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-	// 3. Кастомные селекты
+	// =============================================
+	// 4. CUSTOM SELECTS
+	// =============================================
 	function initCustomSelects() {
+		// Category select
 		const categorySelect = document.querySelector(
 			'.custom-select:not(.user-profile)'
 		)
@@ -113,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		}
 
+		// Profile dropdown
 		const profileDropdown = document.querySelector('.user-profile')
 		if (profileDropdown) {
 			const profileToggle = profileDropdown.querySelector('.profile-link')
@@ -131,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		}
 
-		// Закрытие селектов при клике вне их области
+		// Close selects when clicking outside
 		document.addEventListener('click', function (e) {
 			if (
 				!e.target.closest('.custom-select') &&
@@ -146,36 +268,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-	// 4. Слайдеры
-	function initSliders() {
-		if (typeof Swiper !== 'undefined') {
-			new Swiper('.swiper', {
-				slidesPerView: 3,
-				spaceBetween: 16,
-				centeredSlides: false,
-				loop: true,
-				speed: 800,
-				effect: 'slide',
-				navigation: {
-					nextEl: '.s-button-next',
-					prevEl: '.s-button-prev',
-				},
-				breakpoints: {
-					768: {
-						slidesPerView: 1,
-						spaceBetween: 10,
-					},
-					1024: {
-						slidesPerView: 2,
-						spaceBetween: 15,
-					},
-				},
-			})
-		}
-	}
-
-	// 5. Поиск в хедере
-	function initHeaderSearch() {
+	// =============================================
+	// 5. HEADER FUNCTIONALITY
+	// =============================================
+	function initHeader() {
+		// Search functionality
 		const searchBtn = document.querySelector('.header__search-btn')
 		if (searchBtn) {
 			searchBtn.addEventListener('click', function (e) {
@@ -187,20 +284,19 @@ document.addEventListener('DOMContentLoaded', function () {
 				search.classList.toggle('active')
 
 				if (container.classList.contains('search-active')) {
-					document.addEventListener('click', function closeSearch(event) {
+					const closeSearch = function (event) {
 						if (!event.target.closest('.header__search')) {
 							container.classList.remove('search-active')
 							search.classList.remove('active')
 							document.removeEventListener('click', closeSearch)
 						}
-					})
+					}
+					document.addEventListener('click', closeSearch)
 				}
 			})
 		}
-	}
 
-	// 6. Бургер-меню
-	function initBurgerMenu() {
+		// Burger menu
 		const burger = document.querySelector('.burger')
 		if (burger) {
 			burger.addEventListener('click', function (e) {
@@ -214,6 +310,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		}
 	}
+
+	// =============================================
+	// 6. NOTIFICATIONS
+	// =============================================
 	function initNotifications() {
 		function closeNotification(notification) {
 			notification.classList.add('fade-out')
@@ -222,25 +322,39 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 		}
 
-		const notifications = document.querySelectorAll('.notification')
-		notifications.forEach(notification => {
+		document.querySelectorAll('.notification').forEach(notification => {
 			setTimeout(() => closeNotification(notification), 5000)
-
 			notification.addEventListener('click', () =>
 				closeNotification(notification)
 			)
 		})
 	}
 
-	// Инициализация всех компонентов
+	// =============================================
+	// 7. INITIALIZE ALL COMPONENTS
+	// =============================================
+	initWishlist()
 	initProfileSection()
 	initAccordions()
 	initCustomSelects()
-	initSliders()
-	initHeaderSearch()
-	initBurgerMenu()
+	initHeader()
 	initNotifications()
-	initAccountTabs()
+
+	// if (typeof Swiper !== 'undefined') {
+	// 	new Swiper('.swiper', {
+	// 		slidesPerView: 3,
+	// 		spaceBetween: 16,
+	// 		loop: true,
+	// 		navigation: {
+	// 			nextEl: '.s-button-next',
+	// 			prevEl: '.s-button-prev',
+	// 		},
+	// 		breakpoints: {
+	// 			768: { slidesPerView: 1, spaceBetween: 10 },
+	// 			1024: { slidesPerView: 2, spaceBetween: 15 },
+	// 		},
+	// 	})
+	// }
 })
 
 // const swiper = new Swiper('.swiper', {
